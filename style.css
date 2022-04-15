@@ -8,7 +8,7 @@ html, body{
     width: 100%;
     background-color: black;
     text-align: center;
-    cursor: url(nave-removebg-preview_v2.png) 36 2, auto;
+    cursor: url('nave.png') 36 2, auto;
     background: url('https://c.tenor.com/xfsFj7A6lJMAAAAd/galaxy.gif') no-repeat center;
     background-size: cover;
 

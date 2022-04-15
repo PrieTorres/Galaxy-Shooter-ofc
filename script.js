@@ -15,7 +15,11 @@ let gameOverTela = document.querySelector('#game-over');
 //
 
 function pausar(){
-    window.alert('jogo pausado');
+    if(jogoRodando == true){
+        jogoRodando = false;
+    }else{
+        jogoRodando = true;
+    }
 }
 
 
@@ -48,6 +52,7 @@ bodye.addEventListener('mousemove', m => {
 })*/
 
 let funcaoMain = e => {
+    if(jogoRodando){//por conta do botão de pause
     x = e.pageX;
     y = e.pageY;
     xAster = Number(Math.floor(Math.random() * tamanhopcX));
@@ -65,12 +70,15 @@ let funcaoMain = e => {
     let numCordY;
     dives.forEach(div => {
         setInterval(function(){
+            if(jogoRodando){//por conta do botão de pause
+            //parte responsável pela movimentação dos tiros
             numCordY = parseInt(div.style.top);
             numCordX = parseInt(div.style.left);
             if(numCordY >= -20){
                 numCordY -= velTiro;
             }
             div.style.top = numCordY+'px'; 
+            }
         }, 20)
         if(parseInt(div.style.top) <= -10){
             if (div.parentNode) {
@@ -83,11 +91,15 @@ let funcaoMain = e => {
         let cordYaster;
         
         setInterval(function(){
+            if(jogoRodando){//por conta do botão de pause
+            //parte responsável pela movimentação dos asteroids
             cordYaster = parseInt(aster.style.top);
             if(cordYaster < tamanhopcY){
                 cordYaster += velAsteroid;
             }
             aster.style.top = cordYaster+'px';
+            //
+            }
 
             cordYaster = parseInt(aster.style.top);
             if(cordYaster >= (tamanhopcY - 10)){
@@ -166,10 +178,12 @@ let funcaoMain = e => {
         });
     }
 }
+}
 
 function gameOn(){
     bodye.addEventListener('click', funcaoMain);
 }
+
 
 gameOn();
 
