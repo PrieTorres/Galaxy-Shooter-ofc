@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    cursor: url(nave-removebg-preview_v2.png) 36 2, auto;
+    background: url('https://c.tenor.com/xfsFj7A6lJMAAAAd/galaxy.gif') no-repeat center;
+    background-size: cover;
+
+}
+body{
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border: none;
+}
+.tiro{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 43, 167);
+    display: inline-block;
+    position: absolute;
+}
+.asteroid{
+    height: 30px;
+    width: 30px;
+    padding: 15px;
+    border-radius: 50%;
+    /*background-color: grey;
+    border: 3px solid rgb(78, 78, 78);*/
+    background:  url('http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/448d69448ddc03b.png') no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+.barra-vida{
+    width: 400px;
+    height: 25px;
+    background-color: brown;
+    margin: 0 auto;
+    text-align: left;
+}
+#barra-main{
+    background-color: greenyellow;
+    margin: 0;
+    padding: 0;
+}
+.centralizante{
+    width: 100%;
+    text-align: center;
+}
+#game-over{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    background: url('https://c.tenor.com/BTMPECC4hS4AAAAC/game-over.gif') no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 10;
+}
+.caixinha{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(224, 224, 224, 0.589);
+    position: absolute;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#pontos{
+    top: 0;
+    left: 0;
+    line-height: 100px;
+}
+#pause{
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    line-height: 60px;
+    font-size: xx-large;
+    width: 60px;
+    height: 60px;
+}
+#pause span{
+    font-weight: bolder;
+    border: 1px solid black;
+}
+#nivel{
+    display: none;
+    width: 900px;
+    height: 500px;
+    background: rgba(100, 62, 189, 0.589);
+    margin: 0 auto;
+    margin-top: 70px;
+    text-align: center;
+}
+
+/*----------------------------------------------------*/
+#confirm {
+    display: none;
+    background-color: #514E61;
+    color: #FFFFFF;
+    border: 1px solid #aaa;
+    position: fixed;
+    width: 250px;
+    left: 50%;
+    margin-left: -100px;
+    padding: 6px 8px 8px;
+    box-sizing: border-box;
+    text-align: center;
+ }
+ #confirm button {
+    background-color: #48E5DA;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+ }
+ #confirm .message {
+    text-align: left;
+ }
+ /*-------------------------------------------------------*/
