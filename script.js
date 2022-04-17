@@ -17,8 +17,10 @@ let gameOverTela = document.querySelector('#game-over');
 function pausar(){
     if(jogoRodando == true){
         jogoRodando = false;
+        document.body.querySelector('.pause-tela').style.display = 'block';
     }else{
         jogoRodando = true;
+        document.body.querySelector('.pause-tela').style.display = 'none';
     }
 }
 
@@ -102,8 +104,8 @@ let funcaoMain = e => {
             }
 
             cordYaster = parseInt(aster.style.top);
-            if(cordYaster >= (tamanhopcY - 10)){
-                if (aster.parentNode) {
+            if(cordYaster >= (tamanhopcY - 10)){//remove o asteroid se ele não aparece mais na tela
+                if (aster.parentNode) {//remove o asteroid
                     aster.parentNode.removeChild(aster);
                     perderVida();
                 }
