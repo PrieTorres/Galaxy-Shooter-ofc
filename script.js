@@ -24,6 +24,22 @@ function pausar(){
     }
 }
 
+function LevelUp(nivel){    
+    document.body.querySelector('div.nivel-tela').style.display = 'block';
+    document.body.querySelector('div.nivel-caixa p').innerHTML = nivel;
+    document.body.querySelector('div.nivel-caixa').classList.add('animate__animated', 'animate__bounceInLeft');
+    jogoRodando = false;
+
+    setTimeout(() => {
+    document.body.querySelector('div.nivel-caixa').classList.add('animate__animated', 'animate__bounceOutRight');
+    document.body.querySelector('div.nivel-caixa').addEventListener('animationend', () => {
+        document.body.querySelector('div.nivel-tela').style.display = 'none';
+    });
+    jogoRodando = true;
+    }, 2000);
+        
+}
+
 
 function reset(){
     vida = 400;
@@ -125,23 +141,23 @@ let funcaoMain = e => {
                     //niveis----------->
                     if(pontos == 10){
                         nivel = 2;
-                        window.alert('você passou de nível!');
+                        LevelUp(nivel);
                         velAsteroid++;
                     }
                     if(pontos == 50){
                         nivel = 3;
-                        window.alert('você passou de nível!');
+                        LevelUp(nivel);
                         velAsteroid+=2;
                     }
                     if(pontos == 110){
                         nivel = 3;
-                        window.alert('você passou de nível!');
+                        LevelUp(nivel);
                         velAsteroid+=3;
                         velTiro+=2;
                     }
                     if(pontos == 230){
                         nivel = 4;
-                        window.alert('você passou de nível!');
+                        LevelUp(nivel);
                         velAsteroid+=4;
                         velTiro+=3;
                     }

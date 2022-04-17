@@ -121,3 +121,52 @@ body{
     font-family: 'START', Arial, Helvetica, sans-serif;
     cursor: default;
 }
+
+.nivel-tela{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 63, 63, 0.541);
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 10;
+    text-align: center;
+    transition: all ease-in-out .5s;
+}
+.nivel-caixa{
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: calc(50% - 300px);
+    top: calc(50% - 200px);
+    background-color: rgba(240, 240, 240, 0.836);
+    text-align: center;
+    transition: all ease-in-out .5s;
+    padding-top: 20px;
+    border-radius: 15px;
+}
+.nivel-caixa p{
+    border: 5px solid green;
+    color: green;
+    font-size: 60px;
+    line-height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 90px);
+    top: calc(50% - 70px);
+    box-sizing: border-box;
+    font-family: 'START', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.nivel-caixa span{
+    color: green;
+    font-size: 45px;
+    font-family: 'START', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/*
+.nivel-caixa{
+    animation: bounce;
+    animation-duration: 2s;
+}
+*/

@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>galaxy shooter</title>
-    <script>let jogoRodando = true</script>
+    <title>Galaxy shooter</title>
+    <script> let jogoRodando = true </script>
     <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 </head>
 <body>
     <div class="pause-tela">
         <h1>Pausado</h1>    
     </div>
+    <div class="nivel-tela">
+        <div class="nivel-caixa">
+            <span>Você passou de nível!</span>
+            <p></p>
+        </div>    
+    </div>
     <div id="game-over"></div>
-    <div class="centralizante"><div class="barra-vida"><div id="barra-main" class="barra-vida"></div></div></div>
+    <div class="centralizante">
+        <div class="barra-vida">
+            <div id="barra-main" class="barra-vida"></div>
+        </div>
+    </div>
     <div id="pontos" class="caixinha">0</div>
     <div id="pause" class="caixinha" onclick="pausar()"><span>||</span></div>
     <div id="nivel"></div>
