@@ -9,6 +9,7 @@ let vida = 400;
 let pontos = 0;
 let nivel = 1;
 let perdeu = 0;
+let danoAsteroid = 4
 //
 let bodye = document.body;
 let gameOverTela = document.querySelector('#game-over');
@@ -29,13 +30,16 @@ function LevelUp(nivel){
     document.body.querySelector('div.nivel-caixa p').innerHTML = nivel;
     document.body.querySelector('div.nivel-caixa').classList.add('animate__animated', 'animate__bounceInLeft');
     jogoRodando = false;
+    danoAsteroid += nivel
 
     setTimeout(() => {
     document.body.querySelector('div.nivel-caixa').classList.add('animate__animated', 'animate__bounceOutRight');
     document.body.querySelector('div.nivel-caixa').addEventListener('animationend', () => {
         document.body.querySelector('div.nivel-tela').style.display = 'none';
+        document.body.querySelector('div.nivel-caixa').classList.remove('animate__animated', 'animate__bounceOutRight');
+        jogoRodando = true;
     });
-    jogoRodando = true;
+    
     }, 2000);
         
 }
@@ -59,7 +63,7 @@ function criadorDeAsteroid(num, quantidade){
 
 function perderVida(){
     let barraVida = document.body.querySelector('#barra-main');
-    vida -= 4;
+    vida -= danoAsteroid;
     barraVida.style.width = vida+'px';
     bodye.style.border = "10px solid red"
 }
@@ -150,13 +154,13 @@ let funcaoMain = e => {
                         velAsteroid+=2;
                     }
                     if(pontos == 110){
-                        nivel = 3;
+                        nivel = 4;
                         LevelUp(nivel);
                         velAsteroid+=3;
                         velTiro+=2;
                     }
                     if(pontos == 230){
-                        nivel = 4;
+                        nivel = 5;
                         LevelUp(nivel);
                         velAsteroid+=4;
                         velTiro+=3;
