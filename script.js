@@ -12,7 +12,6 @@ let perdeu = 0;
 let danoAsteroid = 4
 //
 let bodye = document.body;
-let gameOverTela = document.querySelector('#game-over');
 //
 
 function pausar(){
@@ -80,10 +79,7 @@ let funcaoMain = e => {
     xAster = Number(Math.floor(Math.random() * tamanhopcX));
     criadorDeAsteroid(xAster);
 
-    if(vida <= 0){//-----------MORREU---------------
-        bodye.querySelector('#game-over').style.display = 'block'
-        perdeu = 1;
-    }
+    
 
     bodye.innerHTML += '<div class="tiro" style= "top: '+y+'px; left:'+x+'px;"></div>';
     let dives = document.body.querySelectorAll('div.tiro');
@@ -128,8 +124,10 @@ let funcaoMain = e => {
                 if (aster.parentNode) {//remove o asteroid
                     aster.parentNode.removeChild(aster);
                     perderVida();
+                    perdedor();
                 }
             }
+
 
             let cordXaster = parseInt(aster.style.left);
             cordYaster = parseInt(aster.style.top);
@@ -188,16 +186,29 @@ let funcaoMain = e => {
         }, 50);
 
     });
-    
-    if(perdeu == 1){
-        console.log('entrou no if')
-        bodye.addEventListener('keypress', function(){
+
+    function perdedor(){
+        if(vida <= 0){//-----------MORREU---------------
+            bodye.querySelector('#game-over').style.display = 'block'
+            perdeu = 1;
+            let AllAsteroids = document.querySelectorAll('div.asteroid');
+            AllAsteroids.forEach(aster => {
+                if(aster.parentNode){
+                    aster.parentNode.removeChild(aster)
+                }
+            });
+        }
+        if(perdeu == 1){
+            console.log('entrou no if')
             bodye.removeEventListener('click', funcaoMain);
             reset();
-            console.log('resetou');
-            gameOn();
-            bodye.style.border = 'none';
-        });
+            bodye.addEventListener('keypress', function(){
+                console.log('resetou');
+                gameOn();
+                bodye.style.border = 'none';
+                bodye.querySelector('#game-over').style.display = 'none';
+            });
+        }
     }
 }
 }
