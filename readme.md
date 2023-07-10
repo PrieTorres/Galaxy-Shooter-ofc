@@ -6,3 +6,5 @@ Mudanças a serem feitas ---------------------->
 ** todo o sistema de níveis precisa ser revisado e melhorado (foi feita melhoria na estilização);
 **! refazer o criador de asteroids para eles surgirem de maneira automática fora do eventListener e de acordo com os níveis !**
 ** fazer sistema de placar (do jeito que der, talvez envolva php)
+
+joge aqui https://prietorres.github.io/Galaxy-Shooter-ofc/
