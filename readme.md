@@ -7,4 +7,4 @@ Mudanças a serem feitas ---------------------->
 **! refazer o criador de asteroids para eles surgirem de maneira automática fora do eventListener e de acordo com os níveis !**
 ** fazer sistema de placar (do jeito que der, talvez envolva php)
 
-joge aqui https://prietorres.github.io/Galaxy-Shooter-ofc/
+jogue aqui https://prietorres.github.io/Galaxy-Shooter-ofc/
